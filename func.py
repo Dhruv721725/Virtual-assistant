@@ -8,6 +8,7 @@ import time
 import AppOpener as ao
 import pyautogui as ptg
 from englisttohindi.englisttohindi import EngtoHindi
+import wikipedia as wk
 def fin(p,f):
     l=[]
     dir=os.listdir(p)
@@ -59,11 +60,11 @@ def wish():
     a=t.split(" ")
     h=int((a[1].split(":"))[0])
     m=int((a[1].split(":"))[1])
-    if h>0 and h<12:
+    if h>=0 and h<12:
         return("Good morning")
-    elif h>12 and h<18:
+    elif h>=12 and h<18:
         return("Good afternoon")
-    elif h>18 and m<1:
+    elif h>=18 and m>1:
         return("Good evening")
     
 def open(src):
@@ -86,13 +87,11 @@ def lstn():
         return q
     except Exception:
         print("voivce not recognized")
-        return "none"
+        return " "
 
 def translate(st):
     res=EngtoHindi(st)
     return res.convert
-
-
 
 # shortcuts
 def write(st):
@@ -125,3 +124,9 @@ def delete():
     ptg.keyDown("del")
     ptg.keyUp("del")
 
+# wikipedia api
+def query(req):
+    res=wk.search(req)
+    pg=wk.page(res[0])
+    summary=pg.summary
+    return summary

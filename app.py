@@ -148,8 +148,14 @@ while True:
                                     break
 
                 else:
-                    s=" "
-                spk(s)
-                queries+=1
+                    res=query(st)
+                    print (res)
+                    spk(res)
+                if st == " ":
+                    queries=0
+                else:
+                    queries+=1
+
+
     except Exception as e:
         print(e)
