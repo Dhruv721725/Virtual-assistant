@@ -9,6 +9,7 @@ import AppOpener as ao
 import pyautogui as ptg
 from englisttohindi.englisttohindi import EngtoHindi
 import wikipedia as wk
+# it is to find files inside pc
 def fin(p,f):
     l=[]
     dir=os.listdir(p)
@@ -34,7 +35,7 @@ def fin(p,f):
         except NotADirectoryError as e:
             pass
     return l
-
+# it is to search things over browser
 def fout(url):    
     if url=="youtube":
         url="http://www.youtube.com"
@@ -45,7 +46,7 @@ def fout(url):
     elif url=="python":
         url="https://www.python.org"
     wb.open_new(url)
-    
+# it is to speak
 def spk(vc):
     e=pyttsx3.init()
     a=e.getProperty("voices")
@@ -54,7 +55,7 @@ def spk(vc):
     e.setProperty("volume",1.0)# setting volume
     e.say(vc)# speaking
     e.runAndWait()
-
+# it is to greet
 def wish():
     t=str(dt.datetime.now())
     a=t.split(" ")
@@ -86,7 +87,7 @@ def lstn():
         print(q)
         return q
     except Exception:
-        print("voivce not recognized")
+        print("voice not recognized")
         return " "
 
 def translate(st):
