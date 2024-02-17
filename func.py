@@ -84,7 +84,6 @@ def lstn():
     try:
         print("recognizing...")
         q=r.recognize_google(aud,language="en-in")
-        print(q)
         return q
     except Exception:
         print("voice not recognized")
@@ -124,6 +123,11 @@ def sel_all():
 def delete():
     ptg.keyDown("del")
     ptg.keyUp("del")
+def ss():
+    ptg.keyDown("win")
+    ptg.keyDown("prtscr")
+    ptg.keyUp("win")
+    ptg.keyUp("prtscr")
 
 # wikipedia api
 def query(req):

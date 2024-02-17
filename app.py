@@ -14,6 +14,7 @@ while True:
                 try:
                     st=lstn()
                     print(st)
+                    print(translate(st))
                     l=st.split(" ")
                     spk(s)
                     if queries>0:
@@ -161,13 +162,16 @@ while True:
 
                     else:
                         res=query(st)
-                        print (res)
-                        spk(res)
+                        # print (res)
+                        txt=str(res).split('.')
+                        print(txt)
+                        spk(txt[1])
+                        print(txt[1])
                     if st != " ":
                         queries+=1
                     else:
                         queries=0
-                    spk("s")
+                    spk(s)
 
                 except Exception as e:
                     print(e)
