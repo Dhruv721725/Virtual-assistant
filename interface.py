@@ -4,7 +4,7 @@ import time
 root=Tk()
 root.title('Jimmy')
 root.iconbitmap('./img/1.ico')
-root.configure(background='')
+root.configure(background='orange')
 root.geometry('400x200')
 root.maxsize(400,200)
 root.minsize(400,200)
@@ -24,6 +24,7 @@ def update(ind):
 label = Label(root)
 label.pack()
 root.after(0, update, 0)
+
 
 text="asdfghjk"
 t1=Label(root,text=text,fg="white")

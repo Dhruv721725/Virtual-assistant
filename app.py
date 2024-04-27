@@ -28,11 +28,13 @@ while True:
                         st=" ".join(l[i+1:])
                         res=translate(st)
                         print(res)
+                        continue
 
                     elif "open" in l:
                         n=l.index("open")
-                        open(l[n+1:])
+                        open(str(l[n+1:]))
                         q+=1
+                        continue
 
                     # elif "close" in l:
                     #     n=l.index("close")
@@ -40,29 +42,35 @@ while True:
 
                     elif "copy" in l:
                         copy()
-                        s="copied"                 
+                        s="copied"  
+                        continue               
 
                     elif "cut" in l:
                         cut()
                         s="cutted"
+                        continue
 
                     elif "paste" in l:
                         paste()
                         s="pasted"
+                        continue
 
                     elif "minimize" in l:
                         i=l.index("minimize")
                         min_all()
 
                         s="minimized"
+                        continue
 
                     elif "undo" in l:
                         undo()
                         s="undone"
+                        continue
 
                     elif "redo" in l:
                         redo()
                         s="redone"
+                        continue
 
                     elif "close" in l:
                         i=l.index("close")
@@ -74,6 +82,7 @@ while True:
                         else:
                             close()
                         s="closed"
+                        continue
 
                     elif "select" in l:
                         i=l.index("select")
@@ -83,6 +92,7 @@ while True:
                         else:
                             sel_all()
                         s="selected"
+                        continue
 
                     elif "delete" in l:
                         spk("are you sure")
@@ -91,7 +101,7 @@ while True:
                             delete()
                         else:
                             spk("ok")
-
+                        continue
                     elif "find" in l:
                         n=l.index("find")
                         file=l[n+1]
@@ -108,11 +118,11 @@ while True:
                         for i in fl:
                             print(i)
                             spk(i)
-
+                        continue
                     elif "search" in l:
                         n=l.index("search")
                         fout(l[n+1])
-
+                        continue
                     elif "tell" in l:
                         n=l.index("tell")
                         a=l[n+1:len(l)]
@@ -132,6 +142,7 @@ while True:
                             s=f"today is {wd[w]}"
                         else:
                             s="what"
+                        continue
 
                     elif "play" in l:
                         n=l.index("play")
@@ -159,6 +170,7 @@ while True:
                                     if i.lower() in str(ad).lower():
                                         os.startfile(ad)
                                         break
+                        continue
 
                     else:
                         res=query(st)
