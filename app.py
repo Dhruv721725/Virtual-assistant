@@ -12,11 +12,11 @@ while True:
             q=0
             while True:
                 try:
+                    spk(s)
                     st=lstn()
                     print(st)
                     print(translate(st))
                     l=st.split(" ")
-                    spk(s)
                     if queries>0:
                         spk("anything else")
 
@@ -184,7 +184,6 @@ while True:
                     else:
                         queries=0
                     spk(s)
-
                 except Exception as e:
                     print(e)
                     continue              
